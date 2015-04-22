@@ -27,7 +27,7 @@ interpreted as described in [RFC 2119].
 
 - Code MUST follow a "coding style guide" PSR [[PSR-1]].
 
-- Code MUST use 4 spaces for indenting, not tabs.
+- Code MUST use tabs for indenting, not 4 spaces.
 
 - There MUST NOT be a hard limit on line length; the soft limit MUST be 120
   characters; lines SHOULD be 80 characters or less.
@@ -35,10 +35,10 @@ interpreted as described in [RFC 2119].
 - There MUST be one blank line after the `namespace` declaration, and there
   MUST be one blank line after the block of `use` declarations.
 
-- Opening braces for classes MUST go on the next line, and closing braces MUST
+- Opening braces for classes MUST go on the same line, and closing braces MUST
   go on the next line after the body.
 
-- Opening braces for methods MUST go on the next line, and closing braces MUST
+- Opening braces for methods MUST go on the same line, and closing braces MUST
   go on the next line after the body.
 
 - Visibility MUST be declared on all properties and methods; `abstract` and
@@ -66,23 +66,20 @@ use FooInterface;
 use BarClass as Bar;
 use OtherVendor\OtherPackage\BazClass;
 
-class Foo extends Bar implements FooInterface
-{
-    public function sampleFunction($a, $b = null)
-    {
-        if ($a === $b) {
-            bar();
-        } elseif ($a > $b) {
-            $foo->bar($arg1);
-        } else {
-            BazClass::bar($arg2, $arg3);
-        }
-    }
+class Foo extends Bar implements FooInterface {
+	public function sampleFunction($a, $b = null) {
+		if ($a === $b) {
+			bar();
+		} elseif ($a > $b) {
+			$foo->bar($arg1);
+		} else {
+			BazClass::bar($arg2, $arg3);
+		}
+	}
 
-    final public static function bar()
-    {
-        // method body
-    }
+	final public static function bar() {
+		// method body
+	}
 }
 ```
 
@@ -120,12 +117,12 @@ There MUST NOT be more than one statement per line.
 
 ### 2.4. Indenting
 
-Code MUST use an indent of 4 spaces, and MUST NOT use tabs for indenting.
+Code MUST use an indent of tabs, and MUST NOT use spaces for indenting.
 
-> N.b.: Using only spaces, and not mixing spaces with tabs, helps to avoid
+> N.b.: Using only tabs, and not mixing tabs with spaces, helps to avoid
 > problems with diffs, patches, history, and annotations. The use of spaces
-> also makes it easy to insert fine-grained sub-indentation for inter-line 
-> alignment.
+> may make it easier to insert fine-grained sub-indentation for inter-line
+> alignment, but still MUST NOT be used.
 
 ### 2.5. Keywords and True/False/Null
 
@@ -174,7 +171,7 @@ The term "class" refers to all classes, interfaces, and traits.
 The `extends` and `implements` keywords MUST be declared on the same line as
 the class name.
 
-The opening brace for the class MUST go on its own line; the closing brace
+The opening brace for the class MUST go on the same line; the closing brace
 for the class MUST go on the next line after the body.
 
 ```php
@@ -185,9 +182,8 @@ use FooClass;
 use BarClass as Bar;
 use OtherVendor\OtherPackage\BazClass;
 
-class ClassName extends ParentClass implements \ArrayAccess, \Countable
-{
-    // constants, properties, methods
+class ClassName extends ParentClass implements \ArrayAccess, \Countable {
+	// constants, properties, methods
 }
 ```
 
@@ -204,11 +200,10 @@ use BarClass as Bar;
 use OtherVendor\OtherPackage\BazClass;
 
 class ClassName extends ParentClass implements
-    \ArrayAccess,
-    \Countable,
-    \Serializable
-{
-    // constants, properties, methods
+	\ArrayAccess,
+	\Countable,
+	\Serializable {
+	// constants, properties, methods
 }
 ```
 
@@ -229,9 +224,8 @@ A property declaration looks like the following.
 <?php
 namespace Vendor\Package;
 
-class ClassName
-{
-    public $foo = null;
+class ClassName {
+	public $foo = null;
 }
 ```
 
@@ -243,7 +237,7 @@ Method names SHOULD NOT be prefixed with a single underscore to indicate
 protected or private visibility.
 
 Method names MUST NOT be declared with a space after the method name. The
-opening brace MUST go on its own line, and the closing brace MUST go on the
+opening brace MUST go on the same line, and the closing brace MUST go on the
 next line following the body. There MUST NOT be a space after the opening
 parenthesis, and there MUST NOT be a space before the closing parenthesis.
 
@@ -254,14 +248,12 @@ parentheses, commas, spaces, and braces:
 <?php
 namespace Vendor\Package;
 
-class ClassName
-{
-    public function fooBarBaz($arg1, &$arg2, $arg3 = [])
-    {
-        // method body
-    }
+class ClassName {
+	public function fooBarBaz($arg1, &$arg2, $arg3 = []) {
+		// method body
+	}
 }
-```    
+```
 
 ### 4.4. Method Arguments
 
@@ -275,12 +267,10 @@ list.
 <?php
 namespace Vendor\Package;
 
-class ClassName
-{
-    public function foo($arg1, &$arg2, $arg3 = [])
-    {
-        // method body
-    }
+class ClassName {
+	public function foo($arg1, &$arg2, $arg3 = []) {
+		// method body
+	}
 }
 ```
 
@@ -296,15 +286,14 @@ between them.
 <?php
 namespace Vendor\Package;
 
-class ClassName
-{
-    public function aVeryLongMethodName(
-        ClassTypeHint $arg1,
-        &$arg2,
-        array $arg3 = []
-    ) {
-        // method body
-    }
+class ClassName {
+	public function aVeryLongMethodName(
+		ClassTypeHint $arg1,
+		&$arg2,
+		array $arg3 = []
+	) {
+		// method body
+	}
 }
 ```
 
@@ -320,16 +309,14 @@ declaration.
 <?php
 namespace Vendor\Package;
 
-abstract class ClassName
-{
-    protected static $foo;
+abstract class ClassName {
+	protected static $foo;
 
-    abstract protected function zim();
+	abstract protected function zim();
 
-    final public static function bar()
-    {
-        // method body
-    }
+	final public static function bar() {
+		// method body
+	}
 }
 ```
 
@@ -355,9 +342,9 @@ next line, and there MUST be only one argument per line.
 ```php
 <?php
 $foo->bar(
-    $longArgument,
-    $longerArgument,
-    $muchLongerArgument
+	$longArgument,
+	$longerArgument,
+	$muchLongerArgument
 );
 ```
 
@@ -388,11 +375,11 @@ closing brace from the earlier body.
 ```php
 <?php
 if ($expr1) {
-    // if body
+	// if body
 } elseif ($expr2) {
-    // elseif body
+	// elseif body
 } else {
-    // else body;
+	// else body;
 }
 ```
 
@@ -411,20 +398,20 @@ indented at the same level as the `case` body. There MUST be a comment such as
 ```php
 <?php
 switch ($expr) {
-    case 0:
-        echo 'First case, with a break';
-        break;
-    case 1:
-        echo 'Second case, which falls through';
-        // no break
-    case 2:
-    case 3:
-    case 4:
-        echo 'Third case, return instead of break';
-        return;
-    default:
-        echo 'Default case';
-        break;
+	case 0:
+		echo 'First case, with a break';
+		break;
+	case 1:
+		echo 'Second case, which falls through';
+		// no break
+	case 2:
+	case 3:
+	case 4:
+		echo 'Third case, return instead of break';
+		return;
+	default:
+		echo 'Default case';
+		break;
 }
 ```
 
@@ -437,7 +424,7 @@ parentheses, spaces, and braces.
 ```php
 <?php
 while ($expr) {
-    // structure body
+	// structure body
 }
 ```
 
@@ -447,7 +434,7 @@ of parentheses, spaces, and braces.
 ```php
 <?php
 do {
-    // structure body;
+	// structure body;
 } while ($expr);
 ```
 
@@ -459,19 +446,19 @@ spaces, and braces.
 ```php
 <?php
 for ($i = 0; $i < 10; $i++) {
-    // for body
+	// for body
 }
 ```
 
 ### 5.5. `foreach`
-    
+
 A `foreach` statement looks like the following. Note the placement of
 parentheses, spaces, and braces.
 
 ```php
 <?php
 foreach ($iterable as $key => $value) {
-    // foreach body
+	// foreach body
 }
 ```
 
@@ -483,11 +470,11 @@ parentheses, spaces, and braces.
 ```php
 <?php
 try {
-    // try body
+	// try body
 } catch (FirstExceptionType $e) {
-    // catch body
+	// catch body
 } catch (OtherExceptionType $e) {
-    // catch body
+	// catch body
 }
 ```
 
@@ -516,11 +503,11 @@ parentheses, commas, spaces, and braces:
 ```php
 <?php
 $closureWithArgs = function ($arg1, $arg2) {
-    // body
+	// body
 };
 
 $closureWithArgsAndVars = function ($arg1, $arg2) use ($var1, $var2) {
-    // body
+	// body
 };
 ```
 
@@ -539,45 +526,45 @@ variable lists split across multiple lines.
 ```php
 <?php
 $longArgs_noVars = function (
-    $longArgument,
-    $longerArgument,
-    $muchLongerArgument
+	$longArgument,
+	$longerArgument,
+	$muchLongerArgument
 ) {
    // body
 };
 
 $noArgs_longVars = function () use (
-    $longVar1,
-    $longerVar2,
-    $muchLongerVar3
+	$longVar1,
+	$longerVar2,
+	$muchLongerVar3
 ) {
    // body
 };
 
 $longArgs_longVars = function (
-    $longArgument,
-    $longerArgument,
-    $muchLongerArgument
+	$longArgument,
+	$longerArgument,
+	$muchLongerArgument
 ) use (
-    $longVar1,
-    $longerVar2,
-    $muchLongerVar3
+	$longVar1,
+	$longerVar2,
+	$muchLongerVar3
 ) {
    // body
 };
 
 $longArgs_shortVars = function (
-    $longArgument,
-    $longerArgument,
-    $muchLongerArgument
+	$longArgument,
+	$longerArgument,
+	$muchLongerArgument
 ) use ($var1) {
    // body
 };
 
 $shortArgs_longVars = function ($arg) use (
-    $longVar1,
-    $longerVar2,
-    $muchLongerVar3
+	$longVar1,
+	$longerVar2,
+	$muchLongerVar3
 ) {
    // body
 };
@@ -589,11 +576,11 @@ in a function or method call as an argument.
 ```php
 <?php
 $foo->bar(
-    $arg1,
-    function ($arg2) use ($var1) {
-        // body
-    },
-    $arg3
+	$arg1,
+	function ($arg2) use ($var1) {
+		// body
+	},
+	$arg3
 );
 ```
 

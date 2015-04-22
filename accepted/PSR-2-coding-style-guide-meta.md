@@ -32,11 +32,11 @@ The following examples are perfectly valid in PSR-2:
 ```php
 <?php
 somefunction($foo, $bar, [
-  // ...
+    // ...
 ], $baz);
 
 $app->get('/hello/{name}', function ($name) use ($app) { 
-    return 'Hello '.$app->escape($name); 
+    return 'Hello '.$app->escape($name);
 });
 ```
 

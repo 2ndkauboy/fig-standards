@@ -67,7 +67,7 @@ i.e, an example of what to avoid:
 ```php
 <?php
 // side effect: change ini settings
-ini_set('error_reporting', E_ALL);
+ini_set( 'error_reporting', E_ALL );
 
 // side effect: loads a file
 include "file.php";
@@ -76,9 +76,8 @@ include "file.php";
 echo "<html>\n";
 
 // declaration
-function foo()
-{
-    // function body
+function foo() {
+	// function body
 }
 ```
 
@@ -88,17 +87,15 @@ effects; i.e., an example of what to emulate:
 ```php
 <?php
 // declaration
-function foo()
-{
-    // function body
+function foo() {
+	// function body
 }
 
 // conditional declaration is *not* a side effect
-if (! function_exists('bar')) {
-    function bar()
-    {
-        // function body
-    }
+if ( ! function_exists( 'bar' ) ) {
+	function bar() {
+		// function body
+	}
 }
 ```
 
@@ -122,8 +119,7 @@ For example:
 // PHP 5.3 and later:
 namespace Vendor\Model;
 
-class Foo
-{
+class Foo {
 }
 ```
 
@@ -133,8 +129,7 @@ of `Vendor_` prefixes on class names.
 ```php
 <?php
 // PHP 5.2.x and earlier:
-class Vendor_Model_Foo
-{
+class Vendor_Model_Foo {
 }
 ```
 
@@ -154,8 +149,8 @@ namespace Vendor\Model;
 
 class Foo
 {
-    const VERSION = '1.0';
-    const DATE_APPROVED = '2012-06-01';
+	const VERSION = '1.0';
+	const DATE_APPROVED = '2012-06-01';
 }
 ```
 

@@ -51,8 +51,8 @@ interpreted as described in [RFC 2119].
 - Opening braces for control structures MUST go on the same line, and closing
   braces MUST go on the next line after the body.
 
-- Opening parentheses for control structures MUST NOT have a space after them,
-  and closing parentheses for control structures MUST NOT have a space before.
+- Opening parentheses for control structures MUST have a space after them,
+  and closing parentheses for control structures MUST have a space before.
 
 ### 1.1. Example
 
@@ -238,8 +238,8 @@ protected or private visibility.
 
 Method names MUST NOT be declared with a space after the method name. The
 opening brace MUST go on the same line, and the closing brace MUST go on the
-next line following the body. There MUST NOT be a space after the opening
-parenthesis, and there MUST NOT be a space before the closing parenthesis.
+next line following the body. There MUST be a space after the opening
+parenthesis, and there MUST be a space before the closing parenthesis.
 
 A method declaration looks like the following. Note the placement of
 parentheses, commas, spaces, and braces:
@@ -323,8 +323,8 @@ abstract class ClassName {
 ### 4.6. Method and Function Calls
 
 When making a method or function call, there MUST NOT be a space between the
-method or function name and the opening parenthesis, there MUST NOT be a space
-after the opening parenthesis, and there MUST NOT be a space before the
+method or function name and the opening parenthesis, there MUST be a space
+after the opening parenthesis, and there MUST be a space before the
 closing parenthesis. In the argument list, there MUST NOT be a space before
 each comma, and there MUST be one space after each comma.
 
@@ -354,8 +354,8 @@ $foo->bar(
 The general style rules for control structures are as follows:
 
 - There MUST be one space after the control structure keyword
-- There MUST NOT be a space after the opening parenthesis
-- There MUST NOT be a space before the closing parenthesis
+- There MUST be a space after the opening parenthesis
+- There MUST be a space before the closing parenthesis
 - There MUST be one space between the closing parenthesis and the opening
   brace
 - The structure body MUST be indented once
@@ -383,7 +383,7 @@ if ( $expr1 ) {
 }
 ```
 
-The keyword `elseif` SHOULD be used instead of `else if` so that all control
+The keyword `elseif` MUST be used instead of `else if` so that all control
 keywords look like single words.
 
 
@@ -487,8 +487,8 @@ space before and after the `use` keyword.
 The opening brace MUST go on the same line, and the closing brace MUST go on
 the next line following the body.
 
-There MUST NOT be a space after the opening parenthesis of the argument list
-or variable list, and there MUST NOT be a space before the closing parenthesis
+There MUST be a space after the opening parenthesis of the argument list
+or variable list, and there MUST be a space before the closing parenthesis
 of the argument list or variable list.
 
 In the argument list and variable list, there MUST NOT be a space before each
@@ -557,7 +557,7 @@ $longArgs_shortVars = function (
 	$longArgument,
 	$longerArgument,
 	$muchLongerArgument
-) use ($var1) {
+) use ( $var1 ) {
    // body
 };
 
